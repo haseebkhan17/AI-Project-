@@ -56,11 +56,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random
 lr = LinearRegression()
 lr.fit(X_train, y_train)
 
-# Predict and convert to binary
+# Predict values
 y_pred = lr.predict(X_test)
-y_pred_binary = [1 if val >= 0.5 else 0 for val in y_pred]
 
-```
+# Convert predictions to binary
+y_pred_binary = [1 if val >= 0.5 else 0 for val in y_pred]
 
 Evaluation Metrics
 
