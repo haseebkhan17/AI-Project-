@@ -4,21 +4,6 @@
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3-green)
 ![GitHub issues](https://img.shields.io/badge/GitHub-Issues-lightgrey)
 
-## 📋 Table of Contents
-
-- Project Overview
-- Dataset Description
-- Data Preprocessing
-- Features and Target Definition
-- Model Training
-- Evaluation Metrics
-- Visualizations
-- Repository Contents
-- Instructions to Run
-- Potential Improvements
-- Conclusion
-- Author
-
 ## Project Overview
 
 Spinal disorders are a significant health concern worldwide, often leading to pain, reduced mobility, and impaired quality of life. Early diagnosis is crucial for effective treatment.  
@@ -46,9 +31,9 @@ The goal is to **distinguish between normal and abnormal spinal conditions**, ev
 
 ### Target Variable
 
-- **Class_att**: 0 = Normal, 1 = Abnormal
+- **Class_att**: 0 = Normal, 1 = Abnormal  
 
-All features are numeric and suitable for regression-based modeling. These measurements are clinically relevant for spinal health assessment.
+All features are numeric and suitable for regression-based modeling.  
 
 ## Data Preprocessing
 
@@ -58,15 +43,7 @@ All features are numeric and suitable for regression-based modeling. These measu
 4. Selected all biomechanical features for model training.  
 5. Optional: Scaling can be applied for numerical stability.
 
-## Features and Target Definition
-
-- **Features (X):** All spinal measurements  
-- **Target (y):** `Class_att` (Binary: 0 = Normal, 1 = Abnormal)  
-
 ## Model Training
-
-- **Algorithm Used:** Linear Regression  
-- **Libraries:** `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`  
 
 ```python
 from sklearn.linear_model import LinearRegression
@@ -81,87 +58,4 @@ lr.fit(X_train, y_train)
 
 # Predict and convert to binary
 y_pred = lr.predict(X_test)
-y_pred_binary = [1 if val >= 0.5 else 0 for val in y_pred] ```
-
-
-Evaluation Metrics
-
-Accuracy: Proportion of correct predictions.
-
-Confusion Matrix: True positives, true negatives, false positives, false negatives.
-
-Scatter Plots: Compare actual vs predicted values.
-
-from sklearn.metrics import accuracy_score, confusion_matrix
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# Accuracy
-accuracy = accuracy_score(y_test, y_pred_binary)
-print(f"Accuracy: {accuracy:.2f}")
-
-# Confusion Matrix
-cm = confusion_matrix(y_test, y_pred_binary)
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-plt.xlabel("Predicted")
-plt.ylabel("Actual")
-plt.show()
-
-Visualizations
-
-Feature correlation heatmap
-
-Confusion matrix heatmap
-
-Actual vs predicted scatter plot
-
-Visualizations help interpret results and communicate model insights clearly.
-
-Repository Contents
-
-Dataset_spine.csv – Dataset file
-
-Spine_Linear_Regression.ipynb – Notebook with code, metrics, and visualizations
-
-README.md – Project documentation and instructions
-
-Instructions to Run
-
-Open Spine_Linear_Regression.ipynb in Google Colab or Jupyter Notebook.
-
-Upload Dataset_spine.csv.
-
-Run all cells to:
-
-Load and preprocess data
-
-Train the Linear Regression model
-
-Evaluate metrics and view graphs
-
-Adjust the classification threshold to observe its effect on accuracy and confusion matrix outcomes.
-
-Potential Improvements
-
-Use Logistic Regression, Decision Trees, or Random Forests for improved classification.
-
-Apply feature scaling or normalization for numerical stability.
-
-Use cross-validation to improve model reliability.
-
-Explore feature importance to identify the most influential measurements.
-
-Experiment with ensemble methods for higher accuracy.
-
-Conclusion
-
-This project demonstrates how Linear Regression can be adapted for classification tasks in healthcare data analysis. Through preprocessing, training, evaluation, and visualization, it provides a strong foundation for spinal condition prediction and serves as an academic reference for machine learning workflows in medical datasets.
-
-Author
-
-Name: Muhammad Haseeb Khan
-
-University: Capital University of Science & Technology (CUST)
-
-GitHub: haseebkhan17
-
+y_pred_binary = [1 if val >= 0.5 else 0 for val in y_pred]
