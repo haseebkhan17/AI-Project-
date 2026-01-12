@@ -81,7 +81,7 @@ lr.fit(X_train, y_train)
 
 # Predict and convert to binary
 y_pred = lr.predict(X_test)
-y_pred_binary = [1 if val >= 0.5 else 0 for val in y_pred]
+y_pred_binary = [1 if val >= 0.5 else 0 for val in y_pred] ```
 
 
 Evaluation Metrics
